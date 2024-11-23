@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Ingresar Empleado</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Ingresar empleado
+            </div>
+            <div class="card-body">
+                <form method="post" action="/store" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="txtNombre">Nombre:</label>
+                        <input id="txtNombre" class="form-control" type="text" name="txtNombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCorreo">Correo:</label>
+                        <input id="txtCorreo" class="form-control" type="text" name="txtCorreo">
+                    </div>
+                    <div class="form-group">
+                        <label for="txtFoto">Foto:</label>
+                        <input id="txtFoto" class="form-control" type="file" name="txtFoto">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success" value="Agregar">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary">Regresar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+</html>
